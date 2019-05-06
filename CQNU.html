@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!--获取时间，并显示年月日-->
+<script language=Javascript> 
+
+function showTime()
+{
+
+  var d = new Date()<!--获取当前日期-->
+  var s = (d.getYear()-100+2000)+"年"+<!--获取当前日期的年份-->
+         (d.getMonth()+1)+"月"+<!--获取当前日期的月份-->
+        d.getDate()+"日"+<!--获取当前日期的号数-->
+       d.getHours()+":"+<!--获取当前日期的小时-->
+       d.getMinutes()+":"+<!--获取当前日期的分钟-->
+	   d.getSeconds();<!--获取当前日期的秒数-->
+    
+      
+   document.getElementById('date').innerHTML=s;<!--把S值返回到ID标记date中-->
+  setTimeout(showTime,1000);<!--执行次数-->
+
+}
+</script>
+	<meta charset="UTF-8">
+	<title>CQNU</title>
+    <style>
+	@font-face{font-family: "小明字体"; src:url("fonts/主黑.ttf")}<!--加载字体-->
+	body,html{width: 100%;height:100%;background-color: #000;font-family: 楷体; z-index:1px; font-size:16px;}/*页面设置*/
+    #content{width: 1000px;height: 1200px;
+	background-color: #fff;margin: auto;padding-top: 2%;
+	/*-webkit-box-shadow: 10px 10px 10px #999 inset;
+	-moz-box-shadow:10px 10px 10px #999 inset;
+	box-shadow: 10px 10px 10px #999 inset;
+	 border-radius:15px;*/}
+	/* .img1,.img2,.img3{ z-index:0px;position: absolute;}
+	 .img1{position: absolute;float: left;top: 20%; left: 20%;}
+	 .img2{position: absolute; left: 65%;top: 45%;}
+	 .img3{position: absolute;top: 80%;left: 30%;}这里有点乱反正没用的东西都是*/
+	#bgc{ /*border-radius:15px;*/width:100%;height:100%; margin: auto;}/*背景色设置*/
+	#banner{height: 14%;width: 100%;font-family: "小明字体";background: url(images/imgCQNU/banner2.png); font-size:1em}/*顶部标志设置*/
+	#date{position: relative; top: 2%;left: 2%;
+	display:inline-block;
+	margin: 2%; 
+}/*日期位置设置*/
+    .xiantiao{width: 60%;height: 1px;margin: auto 1%; border-bottom: 1px solid #000;position: relative; left: 20%;}  /*在标志下面画一条横线*/
+	#head{
+	font-family: "宋体";
+	text-align: center;
+	vertical-align: auto;
+	margin: auto;
+	position: relative;
+	width: 90%;
+	height: 3%;
+}/*头部文字设置*/
+	ul{ list-style-type:none; }/*不让ul显示list*/
+	li{float: left; font-size:0.82em;}/*li统一设置字体字号*/
+	.li1{position: absolute; left: 33%;}/*每个li绝对位置设置及left边距*/
+	.li2{position: absolute; left: 38%;}/*每个li绝对位置设置及left边距*/
+	.li3{position: absolute; left: 46%;}/*每个li绝对位置设置及left边距*/
+	.li4{position: absolute; left: 53%;}/*每个li绝对位置设置及left边距*/
+	.li5{position: absolute; left: 62%;}/*每个li绝对位置设置及left边距*/
+	li a{color: #000; text-decoration:none;}/*每个li里面的a标记的字体颜色设置为白色等*/
+	li a:hover{ text-decoration: underline;}/*当鼠标移到文字上时下面出现下划线*/
+	#body{height: 75%;width: 98%;margin-top: 2%;margin-left: 1%; border:1px solid #000;}/*显示部分设置*/
+	.div1{position: relative; 
+	      left: 5%;
+	        width: 40%;
+	        height: 40%;
+			top: 5%;
+			background:#fff;
+			float: left;
+			margin-left: 5%;
+			}
+		#slider {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0px;
+			top: 0px;
+			overflow: hidden;
+			background: #fff;
+			
+		}
+		#slider .slide {
+			position: absolute;
+			top: 1%;
+			height: 100%;
+			width: 100%;
+			background: #000;
+			overflow: hidden;
+			border-left: #000 solid 1px;
+			cursor: default;
+		}
+		#slider .title   {
+			color: #ccc;
+			font-weight: bold;
+			font-size: 1.2em;
+			margin-right: 1em;
+			text-decoration: none;
+		}
+		#slider .backgroundText {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top:50%;
+			background: #000;
+			filter: alpha(opacity=40);
+			opacity: 0.4;
+		}
+		#slider .text {
+	position: absolute;
+	top: 30%;
+	color: #FFF;
+	font-family: verdana, arial, Helvetica, sans-serif;
+	font-size: 0.9em;
+	text-align: justify;
+	width: 50%;
+	left: 1%;
+		}/*图片解释说明文字属性设置*/
+		#slider .diapo {
+			position: absolute;
+			filter: alpha(opacity=100);
+			opacity: 1;
+			visibility: hidden;
+		}
+		.div2{position: relative;
+		left:6%;top:5.5%;
+		width: 32%;height: 38%;
+		color: #000;
+		display: block;float: left;
+		padding: 1%;
+		margin-left: 5%;
+		background-color:#000;
+		color: #fff;}
+		h2{color: #fff;}
+		.div3 {position: relative;
+		left:6%;top:8%;
+		width: 70%;height: 40%;
+		color: #000;
+		display: block;
+		padding: 3%;
+		margin-left: 5%;
+		background-color:#000;
+		clear:both;
+		color: #fff;}
+		.div4{margin: auto;text-align: center; vertical-align: auto;}
+    </style>
+</head>
+<body onload="showTime()">
+<div id="content">
+<div id="bgc">
+<!--<div class="img1"><img src="imgCQNU/bg1.png" alt=""></div>
+<div class="img2"><img src="imgCQNU/bg2.png" alt=""></div>
+<div class="img3"><img src="imgCQNU/bg3.png" alt=""></div>
+-->
+<div id="banner"><div id="date">   </div></div>
+<div class="xiantiao"></div>
+<div id="head">
+	<ul>
+<li class="li1"><a href="http://daming.dev.dxdc.net/grwz">首页</a></li>
+<li class="li2"><a href="http://daming.dev.dxdc.net/grwz/MFMH.html">家与家乡</a></li>
+<li class="li3"><a href="http://daming.dev.dxdc.net/grwz/picture.html">留言板</a></li>
+<li class="li4"><a href="http://daming.dev.dxdc.net/grwz/school.html">高中时代</a></li>
+<li class="li5"><a href="http://daming.dev.dxdc.net/grwz/Xport.html">极限运动</a></li>
+	</ul>	
+</div>
+<div id="body">
+	<div class="div1">
+				<div id="slider">
+					<div class="slide">
+						<img class="diapo" src="images/imgCQNU/1.jpg" alt="">
+					  <div class="text">
+							  <span class="title">军训的我</span>看我一脸傻样，刚开始的军训的几天太阳特别大，整个人都不好了，特别是站军姿，简直要人命。
+						</div>
+					</div>
+					<div class="slide">
+						<img class="diapo" src="images/imgCQNU/2.jpg" alt="">
+					  <div class="text">
+							<span class="title">军训的小伙伴</span>一起军训的小伙伴，我们几个因为身高不合格被踢了出来，就自己成了第三团，天天浪~~~哈哈哈</div>
+					</div>
+					<div class="slide">
+						<img class="diapo" src="images/imgCQNU/3.jpg" alt="">
+					  <div class="text">
+							  <span class="title">军训日常</span>这位小伙伴是中美的团支书唐良莉哈哈哈。
+						</div>
+					</div>
+					<div class="slide">
+						<img class="diapo" src="images/imgCQNU/4.jpg" alt="">
+					  <div class="text">
+							<span class="title">游玩日常</span>那天白小唯同学带着我和吴超爬了一条崎岖的路，等我爬上歌乐山人都虚脱了，很高兴在大学里认识这些小伙伴
+						</div>
+					</div>
+					<div class="slide">
+						<img class="diapo" src="images/imgCQNU/5.jpg" alt="">
+					  <div class="text">
+							  <span class="title">学着文艺范</span>上了大学终于买了自己一直想要学习的乐器，虽然现在还是弹得很烂，但我会继续努力的，加油2017</div>
+					</div>
+					<div class="slide">
+						<img class="diapo" src="images/imgCQNU/6.jpg" alt="">
+					  <div class="text">
+							  <span class="title">亲亲戴老*~*</span>在大学遇到的良师益友，说起来很有意思，我对戴老的第一印象是可爱，哈哈哈</div>
+					</div>
+					<div class="slide">
+						<img class="diapo" src="images/imgCQNU/7.jpg" alt="">
+					  <div class="text">
+							  <span class="title">动物园</span>那天天气毛毛细雨，和室友秀羽小盆友与吴超同学一起逛动物园，但去了之后就再也不想去了，憋问为什么~
+						</div>
+					</div>
+					<div class="slide">
+						<img class="diapo" src="images/imgCQNU/8.jpg" alt="">
+					  <div class="text">
+							  <span class="title">重师大第一印象</span>搭着客运车到重师门口，这是对重师的第一印象，重师很漂亮，我很自豪自己能在重师读书。
+						</div>
+					</div>
+					<div class="slide">
+						<img class="diapo" src="images/imgCQNU/9.jpg" alt="">
+					  <div class="text">
+							  <span class="title">跑步</span>爱运动爱生活爱健康</div>
+					</div>
+					<div class="slide">
+						<img class="diapo" src="images/imgCQNU/10.jpg" alt="">
+						<div class="text">
+							  <a class="title" >合照</a>戴老签到的方式很独特，自拍一张上传到群，就是考勤，刚好在第一排就和戴老合照了一张，戴老看起来好年轻的样子。
+						</div>
+				  </div>
+                  <div class="slide">
+						<img class="diapo" src="images/imgCQNU/11.jpeg" alt="">
+						<div class="text">
+							  <a class="title">亲亲室友之袁媛</a>一个爱玩爱闹爱虐单身狗的小姑凉。
+						</div>
+				  </div>
+                  <div class="slide">
+						<img class="diapo" src="images/imgCQNU/12.jpeg" alt="">
+						<div class="text">
+							  <a class="title" >亲亲室友之熊熊</a>可爱积极向上喜欢易烊千玺的熊熊，最喜欢欺负我.......
+						</div>
+				  </div>
+                  <div class="slide">
+						<img class="diapo" src="images/imgCQNU/13.jpg" alt="">
+						<div class="text">
+							  <a class="title" >亲亲室友之秀羽</a>安静却又喜欢听比较燃的英文歌的秀羽，也喜欢欺负我.......</div>
+				  </div>
+			</div>
+	</div>
+	<div class="div2"><a href="http://www.cqnu.edu.cn/"><h2>重庆师范大学</h2></a>&nbsp;&nbsp;&nbsp;&nbsp;（英文简写CQNU），简称“重师”，创办于1954年。是一所以文理为主，多学科协调发展的多科性高等学府，坐落在历史文化名城重庆，校园面积2804亩，包括大学城校区、沙坪坝校区和北碚校区。
+学校是国家首批卓越农林人才教育培养计划和卓越教师培养计划改革试点高校。此外，“重庆旅游学院”、“重庆音乐学院”、“重庆幼儿师范学院”、“重庆特殊教育学院”也依托学校设立。
+截至2016年8月，有教职工2200余人，其中专任教师1776余人。有17个学院，1个独立二级学院，68个全日制本科专业，17个硕士学位一级学科授权、10个专业硕士学位授权、1个职教硕士学位授权、1个高师硕士学位授权等</div>
+	<div class="div3"><a href="http://www.cqnu.edu.cn/"><h2>历史轨迹</h2></a>&nbsp;&nbsp;&nbsp;&nbsp;1954年1月，西南文教部、重庆市人民委员会批准建立“重庆师范专科学校”，是新中国成立后最早建立的师范专科学校之一。
+校门题字：郭沫若
+校门题字：郭沫若
+1960年9月，四川省人民委员会批准学校更名为“重庆师范学院”，郭沫若同志为重庆师范学院题写了校牌。
+1962年9月，四川省人民委员会按照国家精简压缩的要求，批准学校更名为“重庆师范专科学校”，同时成都师范专科学校并入。
+1978年1月，经四川省革命委员会批准，学校恢复为“重庆师范学院”。
+2001年5月，重庆市人民政府批准重庆幼儿师范学校、重庆纺织职工大学并入。
+2003年4月，教育部批准学校更名为“重庆师范大学”。
+2003年9月，重庆市人民政府批准重庆市第一师范学校并入。
+2004年7月，重庆师范大学大学城校区奠基。
+2005年10月，首批学生入住大学城校区。<br><h2>个人心声</h2><br>&nbsp;&nbsp;&nbsp;&nbsp;考上重师是我对自己青春最大的骄傲，我也无愧于对自己曾经的努力，虽然自己真的很菜，但是在这样一个优秀的环境下我会更努力的向着明天奔跑，我会用自己的双手证明自己是一个很棒的人！加油大学！</div>
+	
+</div>
+<div class="div4">版权声明：本网页用于@重庆师范大学计算机与信息科学学院16计师杨孝明同学作业使用。Tel:18315165574 QQ:572059273,如若有问题，敬请联系~~~~~</div>
+
+</div>
+
+</div>
+	<script type="text/javascript" src="js/slider.js"><!--这个js代码是从网上学来的，实现的是手风琴式图片展示效果，自己也没学很懂，主要是为了版面好看才去找的，不过大概意思还是能理解--></script>
+<script type="text/javascript">
+	/* ==== start script ==== */
+	slider.init();
+	</script>
+
+
+</body>
+</html>

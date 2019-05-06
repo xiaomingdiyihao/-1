@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title><style>
+    img#target{
+	position: absolute;
+	-webkit-transition: left 5s linear, top 5s linear;
+	-moz-transition: left 5s linear, top 5s linear;
+	-ms-transition: left 5s linear, top 5s linear;
+	-o-transition: left 5s linear, top 5s linear;
+	transition: left 5s linear, top 5s linear;
+	width: 167px;
+	height: 172px;
+}
+    
+    </style>
+</head>
+<body>
+	<img src="img/pi.jpg" alt="" id="target">
+    <script type="text/javascript">
+    var target=document.getElementById('target');
+	  target.style.left="0px";
+	  target.style.top="0px";
+	  document.onmousedown=function(evt)
+	  {
+		  target.style.left=evt.pageX+"px";
+		   target.style.top=evt.pageY+"px";}
+    
+    </script>
+</body>
+</html>

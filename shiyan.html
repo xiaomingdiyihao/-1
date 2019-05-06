@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>无标题文档</title>
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script languagel="JavaScript">/*这个JS主要是设置骑车小人*/<!-- 
+step = 0; 
+obj = new Image(); 
+function frist(m,m1,m2) 
+{ 
+     obj.style.left = x; 
+      x += step*m2; 
+           if (x>=(m1+m)/2) { 
+                             if (m2 == 1) step--; 
+                              else step++; 
+                              } 
+           else { 
+                             if (m2 == 1) step++; 
+                            else step--; 
+                 } 
+           if (x >= m1) { 
+                                   x = m1; 
+                                   m2 = -1; 
+                           } 
+           if (x <= m) { 
+                                   x = m; 
+                                   m2 = 1; 
+                          } 
+     setTimeout('frist('+m+','+m1+','+m2+')', 100); /*设置图片的滚动时间,这一个函数主要是设置step等，以便后面参数的传递*/
+} 
+
+function moveLR(objID,movingarea_width,c) /*定义移动函数 有3个参数*/
+{ 
+               if (navigator.appName=="Netscape") window_width = window.innerWidth; 
+              else window_width = document.body.offsetWidth; /*准确获取窗口的width*/
+                    obj = document.images[objID]; 
+                    image_width = obj.width; 
+                     x1 = obj.style.left; /*获取left的值*/
+                     x = Number(x1.substring(0,x1.length-2)); 
+               if (c == 0) { 
+                                if (movingarea_width == 0) { 
+                                                 right_margin = window_width - image_width; 
+                                                 frist(x,right_margin,1); /*传递参数返回值到frist*/} 
+                               else { 
+                                                 right_margin = x + movingarea_width - image_width; 
+                                           frist(x,right_margin,1);/*传递参数返回值到frist*/ } } 
+              else {    x = Math.round((window_width-movingarea_width)/2); 
+                       right_margin = Math.round((window_width+movingarea_width)/2)-image_width; } 
+                       frist(x,right_margin,1); /*传递参数返回值到frist*/} 
+setTimeout("moveLR('picture',1100,1)",100); /*其中picture是骑车的小人图片name属性*/
+
+//--></script> 
+</head>
+
+<body style="background-color: #000;">
+<img src="imgs/paobu14.gif" name="picture" style="position: absolute; top: 104px; left: 48px;" border="0">
+</body>
+</html>

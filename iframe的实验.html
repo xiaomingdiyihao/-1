@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script>
+			var a = 0; /*定义切换控制变量*/
+			var int; /*定义自动切换控制变量*/
+			function play(x) {
+				var lWid = 1050 /*容器宽带*/ / x;
+				var uHtml = "",
+					tCss = "",
+					pCss = "",
+					z = 0;
+				for (var i = 0; i < x; i++) {
+					if (i > x / 2) {
+						z--
+					} else {
+						z++
+					};
+					uHtml += '<li><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span><span class="s5"></span><span class="s6"></span></li>';
+					tCss += 'li:nth-child(' + (i + 1) + '){transition:1s ' + (i * 0.2 /*速度*/ ) + 's all;z-index:' + z + ';}#picUl li:nth-child(' + (i + 1) + ') span{background-position:' + (-lWid * i) + 'px;}';
+				}
+				$("#css").append("#picUl li{width:" + lWid + "px;}li span{width:" + lWid + "px;}" + tCss);
+				$("#picUl").append(uHtml);
+			};
+			play(10 /*分割数量*/ );
+			/*点击切换*/
+			$("ol li").click(function() {
+				a = $(this).index();
+				var b = -a * 90 + 'deg'
+				$("#picUl li").css("transform", "translateZ(-180px) rotateX(" + b + ")")
+				int = window.clearInterval(int); /*停止自动循环*/
+				int = self.setInterval("zd()", 5000 /*自动切换时间*/ ); /*开始自动循环 与以上停止自动循环一起实现重置循环时间*/
+			});
+			/*自动旋转*/
+			int = self.setInterval("zd()", 5000 /*自动切换时间*/ )
+
+			function zd() {
+				a = a + 1;
+				if (a > 3) {
+					a = 0;
+				}
+				var b = -a * 90 + 'deg'
+				$("#picUl li").css("transform", "translateZ(-180px) rotateX(" + b + ")")
+			}
+		</script>
+</head>
+<body>
+	
+</body>
+</html>

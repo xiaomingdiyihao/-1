@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function dianwo() {
+            var obj = document.getElementById('mydiv');
+            var x = obj.offsetLeft
+            var y = obj.offsetTop;
+			var m = obj.style.top;
+			var n = document.body.offsetHeight ;
+			var m1 = obj.style.left;
+			var n1 = document.body.offsetWidth  ;
+			if ( m >= n ){x -= 5; obj.style.top=y+'px';}
+			if ( m1 >= n1 ){y-=5; obj.style.left=x+'px';}
+		    else{
+			x += 5;
+            y += 5;}
+            obj.style.left = x+'px';
+            obj.style.top = y+'px';
+			
+			
+            
+        }
+     function show()
+     {
+        setInterval('dianwo()',10);
+     }
+    </script>
+    <style type="text/css">
+        
+    .class1
+    {
+        width:100px;
+        height:100px;
+        background-color:Blue;
+        position:absolute; left:100px; top:100px;
+    }
+    </style>
+</head>
+<body onload="show();">
+<div id="mydiv" class="class1" ></div>
+</body>
+</html>

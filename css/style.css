@@ -1,0 +1,63 @@
+
+
+/* Global Structure ============================================================= */
+
+	/*Gallery*/
+	#gallery {
+		height:500px;
+		overflow: hidden;
+		background:url(../images/gallerry-bg.gif) 0 0 repeat-x;
+	}
+
+
+
+
+/* The inside class provides consistent padding. To be used often! */
+
+
+/*----- txt, links, lines, titles -----*/
+
+
+
+/*==================boxes====================*/
+
+
+
+
+
+
+
+
+/*===== gallery =====*/
+.roundabout-holder  { 
+	width:850px;
+	height:496px;
+	margin:0 auto;
+}
+.roundabout-moveable-item {
+   width: 646px;
+   height: 416px;
+   cursor: pointer;
+	 border:3px solid #ccc;
+	 border:3px solid rgba(0, 0, 0, 0.08);
+   border-radius:4px;
+	 -moz-border-radius:4px;
+	 -webkit-border-radius:4px;
+}
+	.roundabout-moveable-item img{
+		width:100%;
+	}
+.roundabout-in-focus {
+	border:3px solid rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+/*--- loopedSlider styles ---*/
+
+
+
+
+/*==========================================*/

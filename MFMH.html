@@ -1,0 +1,286 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+    <title>我的家乡我的家人</title>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script languagel="JavaScript">/*这个JS主要是设置骑车小人*/<!-- 
+step = 0; 
+obj = new Image(); 
+function frist(m,m1,m2) 
+{ 
+     obj.style.left = x; 
+      x += step*m2; 
+           if (x>=(m1+m)/2) { 
+                             if (m2 == 1) step--; 
+                              else step++; 
+                              } 
+           else { 
+                             if (m2 == 1) step++; 
+                            else step--; 
+                 } 
+           if (x >= m1) { 
+                                   x = m1; 
+                                   m2 = -1; 
+                           } 
+           if (x <= m) { 
+                                   x = m; 
+                                   m2 = 1; 
+                          } 
+     setTimeout('frist('+m+','+m1+','+m2+')', 100); /*设置图片的滚动时间,这一个函数主要是设置step等，以便后面参数的传递*/
+} 
+
+function moveLR(objID,movingarea_width,c) /*定义移动函数 有3个参数*/
+{ 
+               if (navigator.appName=="Netscape") window_width = window.innerWidth; 
+              else window_width = document.body.offsetWidth; /*准确获取窗口的width*/
+                    obj = document.images[objID]; 
+                    image_width = obj.width; 
+                     x1 = obj.style.left; /*获取left的值*/
+                     x = Number(x1.substring(0,x1.length-2)); 
+               if (c == 0) { 
+                                if (movingarea_width == 0) { 
+                                                 right_margin = window_width - image_width; 
+                                                 frist(x,right_margin,1); /*传递参数返回值到frist*/} 
+                               else { 
+                                                 right_margin = x + movingarea_width - image_width; 
+                                           frist(x,right_margin,1);/*传递参数返回值到frist*/ } } 
+              else {    x = Math.round((window_width-movingarea_width)/2); 
+                       right_margin = Math.round((window_width+movingarea_width)/2)-image_width; } 
+                       frist(x,right_margin,1); /*传递参数返回值到frist*/} 
+setTimeout("moveLR('picture',1100,1)",100); /*其中picture是骑车的小人图片name属性*/
+
+//--></script>
+
+     <style type="text/css">
+	@font-face{font-family: "yyti"; src:url("fonts/cafepop.ttf")}/*加载字体*/
+	@font-face{font-family: "华文行楷"; src:url("fonts/华文行楷.ttf")}/*加载字体*/
+	
+		*{margin:0px ; padding:0px}/*“*”代表所有*/
+		a{text-decoration:none; }/*a标记的下划线没有*/
+		html{background: url("images/imgs/bg2.jpg");}/*背景图*/
+	    body{background: url("images/imgs/bg2.jpg");}/*背景图因为在电脑和手机上显示不一样所以我两个都分别设置了bgc*/
+		.content{margin: auto;	position: relative;
+	margin: 20px auto 0;
+	padding: 0px;
+	width: 1200px;
+	height: 1000px;
+	/*主容器设置，把它宽高设为固定像素点，后面的设置为百分比*/
+}
+		.banner{top:5%;left:25%; text-align: center;      vertical-align: auto;font-size: 60px; font-family: "yyti";
+		color: #fff;background: rgba(0,0,0,0.6);
+		box-shadow:0px 0px 5px #000;}/*标题*/
+		.banner:hover{color: #fff; background-color: #666;}/*鼠标放上去，字体颜色背景颜色改变*/
+		.banner1{width:1200px;
+	margin-bottom: 150px; 
+		margin-top: 30px;}
+		.banner1 ul{list-style-type: none;}/*不显示ul的list*/
+		.banner1 ul li{color: #fff;
+		margin:36px 25px auto; padding: 5px;
+		float: left;
+		font-size: 28px; font-family: "华文行楷";background:     
+		rgba(0,0,0,0.7);/*box-shadow:0px 0px 1px #000;
+		border-radius:1px; 感觉不用圆的好看点，啦啦啦*/ }
+		.banner1 ul li:hover{color: #fff; background-color: #666;
+		}
+		.list{width:1200px; height:700px;
+		background:rgba(0,0,0,0.3 );
+		box-shadow:0px 0px 5px #000;
+		margin: auto; left: 50%; top: 50%;}
+		.list ul{padding:2px 0px;list-style-type:none;}
+		.list ul li{width:240px;height:256px;
+			float:left;margin:36px 25px;padding:5px;
+			perspective:1000px;/*透视效果与translateZ配合使用*/
+			}
+		.list .move{width:240px;height:256px;transform-style:preserve-3D;/*设置为3D效果*/
+			transform:translateZ(-100px);
+			/*定义3D旋转transform:translateZ(-10px);*/
+			
+			transition:transform 10s;
+			/*翻转的时间设置*/}
+		.list .move .poster,.list .move .infor,.list .move .infor1{position:absolute;
+			border:none;width:230px;
+			height:300px;
+			backface-visibility:hidden;/*隐藏被旋转元素的背面*/
+			color: #fff;
+			font-family: "华文行楷";
+			font-size: 20px;
+			text-align:center;
+			vertical-align:auto;
+			
+			}
+		.list .move .poster{
+			/*transform:translateZ(10px);*/transform:translateZ(130px);
+			}
+		.list .move .infor{
+			transform:rotateY(90deg) translateZ(130px);
+			}
+		.list .move .infor1{
+			transform:rotateY(180deg) translateZ(130px);
+			}
+			
+			
+		.list ul li:hover .move{
+			transform:rotateY(180deg) translateZ(10px); 
+			/*切换的角度*/}
+		.list ul li:hover .move .poster,.list .move .infor,.list .move .infor1{border-radius:12px;box-shadow:0px 0px 6px #000;overflow:hidden;/*边框样式 啦啦啦，我会用transform了~~~~~~*/
+			}
+		.qiche{float: left; text-align:right; position: relative;bottom: 30px;left:100%;}/*骑车小人图片设置大小*/
+		.dibu{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	vertical-align: auto;
+	background: #999;
+	font-size: 0.8em;
+	color: #fff;
+	top: 106%;
+	-webkit-transform: rotate(-1deg);
+	-moz-transform: rotate(-1deg);
+	-ms-transform: rotate(-1deg);
+	-o-transform: rotate(-1deg);
+	transform: rotate(-1deg);
+}/*设置页脚的样式，让它微微倾斜配合骑车小人，看起来会更有意思*/
+		
+			
+
+     </style>
+  </head>
+  <body>
+  <div class="content">
+  <div class="banner">
+  My family AND My hometown
+  </div>
+  <div class="banner1" >
+  	<ul> 
+       <a href="#"><li>我的家与家乡</li></a>
+  	   <a href="http://daming.dev.dxdc.net/grwz/school.html"><li>高中时代</li></a>
+  	   <a href="http://daming.dev.dxdc.net/grwz/CQNU.html"><li>我的重师大</li></a>
+       <a href="http://daming.dev.dxdc.net/grwz/picture.html"><li>留言板板</li></a>
+       <a href="http://daming.dev.dxdc.net/grwz/Xport.html"><li>极限运动</li></a>
+        <a href="http://daming.dev.dxdc.net/grwz"><li>首页</li></a>
+    </ul>
+  </div>
+  
+  <div class="list">
+  		<ul>
+  			<li>
+				<div class="move">
+					<div class="poster">
+						<img src="images/imgs/1.jpg" width=230px height=246px alt="图片加载中...老司机等一等"/> <br><br>奶奶
+					</div><!--图片显示区域-->
+					<div class="infor">
+						<img src="images/imgs/2.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><!--图片显示区域--><br><br>奶奶，我很爱她
+					</div>
+                    <div class="infor1">
+                        <img src="images/imgs/3.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>奶奶还看得懂书呢~~~
+      <!--图片显示区域-->              </div>
+                    
+				</div>
+			</li>
+			<li>
+				<div class="move">
+					<div class="poster">
+						<img src="images/imgs/4.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>爸爸只有一张。。。
+					</div><!--图片显示区域-->
+					<div class="infor">
+						<img src="images/imgs/5.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br>我就暂时放上我喜欢的画
+					</div><!--图片显示区域-->
+                    <div class="infor1">
+                        <img src="images/imgs/6.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>《日出 印象》
+                    </div><!--图片显示区域-->
+				</div>
+			</li>
+			<li>
+				<div class="move">
+					<div class="poster">
+						<img src="images/imgs/7.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>没有妈妈照片。。。
+					</div><!--图片显示区域-->
+					<div class="infor">
+						<img src="images/imgs/8.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>李宇春
+					</div><!--图片显示区域-->
+                    <div class="infor1">
+                        <img src="images/imgs/9.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>李宇春
+                    </div>--><!--图片显示区域-->
+				</div>
+			</li>
+			<li>
+				<div class="move">
+					<div class="poster">
+						<img src="images/imgs/10.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>大南川
+					</div><!--图片显示区域-->
+					<div class="infor">
+						<img src="images/imgs/11.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>南川的体育馆，很好玩的
+					</div><!--图片显示区域-->
+                    <div class="infor1">
+                        <img src="images/imgs/12.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>南川张灯结彩的样子
+                    </div>--><!--图片显示区域-->
+				</div>
+			</li>
+			<li>
+				<div class="move">
+					<div class="poster">
+						<img src="images/imgs/13.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>金佛山
+					</div><!--图片显示区域-->
+					<div class="infor">
+						<img src="images/imgs/14.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>下雪季
+					</div><!--图片显示区域-->
+                    <div class="infor1">
+                        <img src="images/imgs/15.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>现在正是去游玩的好日子
+                    </div>--><!--图片显示区域-->
+				</div>
+			</li>
+			<li>
+				<div class="move">
+					<div class="poster">
+						<img src="images/imgs/16.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>山王坪
+					</div><!--图片显示区域-->
+					<div class="infor">
+						<img src="images/imgs/17.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>很好玩哦
+					</div><!--图片显示区域-->
+                    <div class="infor1">
+                        <img src="images/imgs/18.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>美景风光
+                    </div><!--图片显示区域-->
+				</div>
+			</li>
+			<li>
+				<div class="move">
+					<div class="poster">
+						<img src="images/imgs/19.jpeg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>骑车的我
+					</div><!--图片显示区域-->
+					<div class="infor">
+						<img src="images/imgs/20.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>高中时候的傻样
+					</div><!--图片显示区域-->
+                    <div class="infor1">
+                        <img src="images/imgs/21.jpeg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>登记照。。。
+                    </div>--><!--图片显示区域-->
+				</div>
+			</li>
+			<li>
+				<div class="move">
+					<div class="poster">
+						<img src="images/imgs/22.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>美食
+					</div><!--图片显示区域-->
+					<div class="infor">
+						<img src="images/imgs/23.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>大南川的灰粑
+					</div><!--图片显示区域-->
+                    <div class="infor1">
+                        <img src="images/imgs/24.jpg" width=230px height=246px alt="图片加载中，老司机等一等"/><br><br>大南川的方竹笋
+                    </div><!--图片显示区域-->
+				</div>
+			</li>
+			
+  		</ul>
+  </div>
+ <div class="dibu">
+    本版面版权归@重庆师范大学计算机与信息科学学院16计师小明同学所有，联系方式：18315165574，QQ：572059273 （终于把这个版面做好了~~~~~）<!--页脚-->
+    </div>
+     <img src="images/imgs/paobu14.gif" name="picture" style="position: absolute; top:90%; left: -30%;" border="0"><!--骑车小人-->
+  </div>
+
+ 
+</body>
+</html>

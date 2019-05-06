@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>school</title>
+    
+ 
+<script language =javascript >
+    var curIndex = 0;
+    //时间间隔 单位毫秒 
+    var timeInterval = 1600;
+    var arr = new Array();
+arr[0]="images/imgschool/1.jpg";
+ arr[1]="images/imgschool/2.jpg";
+arr[2]="images/imgschool/3.jpg";
+arr[3]="images/imgschool/4.jpg";
+arr[4]="images/imgschool/5.jpg";
+arr[5]="images/imgschool/6.jpg";
+arr[6]="images/imgschool/7.jpg";
+    var timer = setInterval(changeImg, timeInterval);
+    document.getElementById('showpic').onmouseover = document.getElementById('showpic').onmouseout = function (e) {
+        e = e || window.event;
+        if (e.type=='mouseover') clearInterval(timer);
+        else timer = setInterval(changeImg, timeInterval);
+    }
+    function changeImg() {
+        var obj = document.getElementById("showpic");
+        if (curIndex == arr.length - 1) {
+            curIndex = 0;
+        }
+        else {
+            curIndex += 1;
+        }
+        obj.alt=obj.src =  arr[curIndex];
+    }
+ 
+</script>
+<script language =javascript >
+    var curIndex = 0;
+    //时间间隔 单位毫秒 
+    var timeInterval = 1600;
+    var a = new Array();
+a[0]="images/imgschool/8.jpg";
+a[1]="images/imgschool/9.jpg";
+a[2]="images/imgschool/10.jpg";
+a[3]="images/imgschool/11.jpg";
+a[4]="images/imgschool/12.jpg";
+a[5]="images/imgschool/13.jpg";
+a[6]="images/imgschool/14.jpg";
+    var timer = setInterval(changeImg, timeInterval);
+    document.getElementById('showpic2').onmouseover = document.getElementById('showpic2').onmouseout = function (e) {
+        e = e || window.event;
+        if (e.type=='mouseover') clearInterval(timer);
+        else timer = setInterval(changeImg, timeInterval);
+    }
+    function changeImg() {
+        var obj = document.getElementById("showpic2");
+        if (curIndex == a.length - 1) {
+            curIndex = 0;
+        }
+        else {
+            curIndex += 1;
+        }
+        obj.alt=obj.src =  a[curIndex];
+    }
+ 
+</script>
+
+
+    <style>
+	*{font-size:16px; font-family: "石体";}
+	@font-face{font-family: "石体"; src:url("fonts/石体.ttf")}
+    body,html{height: 100%;width: 100%;background: url(images/imgschool/bg5.png);color: #fff;}/*页面设置*/
+	#content{
+	background: rgba(0,0,0,0.1);
+	box-shadow:0px 0px 2px #000;
+	position: relative;
+	margin: 20px auto 0;
+	padding: 0px;
+	width: 1000px;
+	height: 1580px;
+	
+}/*主容器设置*/
+
+	#head{height: 18%;width: 100%;}/*头部设置*/
+	.banner1{width: 40%;float: left;}/*顶部图片设置*/
+	.banner2{display:inline;
+	background: rgba(0,0,0,0.2);
+	 border-radius:10px;
+	 color: #000;
+	 position: relative;
+	 left: 18%;
+	 top: 2%; 
+	 font-size:5em;
+	 float: left;
+	 line-height:-1em;}/*链接文字设置*/
+	ul{list-style-type: none;}/*不显示list*/
+	ul li{padding:0.5em; }/*内边距相对设置*/
+    a{text-decoration:none;color: #fff;}
+	ul li a:hover{ text-decoration: underline; }/*鼠标放在文字上出现下划线效果*/
+	#body{width: 96%;height: 60%;margin: 2%;margin-top: 2%;
+	background: rgba(0,0,0,0.1);
+	box-shadow:0px 0px 5px #000;
+	font-size:1em;}/*body设置，相对字号和相对高度与宽度*/
+	#body img{width: 90%;height: 90%;margin: 2%;}
+	/*#body img:hover{ opacity: 0.6; filter:alpha(poacity=60);}/*鼠标放在图片上，产生透明效果*/
+	.div1,.div2,.div3,.div4,.div5{background:rgba(0,0,0,0.1);
+	box-shadow:0px 0px 1px #000;margin: 1.5%;text-align: center;}/*盒子边框设置和颜色设置*/
+	.div1{position: absolute;width:45%;
+	height: 27%;margin: 1.5%; }/*放置图片的位置设置*/
+	
+	.div2{position: absolute; left: 50%;top:19%;width: 40%;
+	height: 23.5%;padding: 3%; font-size:1.1em;font-family: 楷体;line-height:1.15em;}/*放置文字的位置设置*/
+	.div2 a{color: #fff; text-decoration: underline;}
+	.div3{position: absolute;width: 45%;height: 27%;margin: 1.5%;top: 50%;}/*放置图片的位置设置*/
+	.div4{position: absolute; left: 50%;top:50%;width: 40%;
+	height: 23.5%;padding: 3%;font-size:1.1em; line-height:1.35em;font-family: 楷体;}/*放置文字的位置设置*/
+	.div5{position: absolute;width: 90%;height: 13.5%;top: 80%;}/*放置t图片的位置设置*/
+	.div6{position: absolute;width: 100%;height: 2%;top: 98%;text-align: center;vertical-align: auto;padding: 2px;color: #000;}/*放置图片的位置设置*/
+/*注释好多呀，都快天亮了，这点我写好不好啊啊啊啊，下面的代码主要图片自动切换*/
+*:before,
+*:after{
+	box-sizing: border-box;
+}
+
+
+.c{
+	margin: auto;
+	width: 210px;
+	height: 240px;
+	position: relative;
+	perspective: 1000;
+}
+#carousel{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	animation: rotation 20s infinite linear;
+}
+#carousel:hover{
+	animation-play-state: paused;
+	
+}
+#carousel figure{
+	display: block;
+	position: absolute;
+	width: 200px;
+	height: 210px;
+	left: 7px;
+	top: -16px;
+	background: rgba(0,0,0,0.1);
+	border: none;
+}
+#carousel figure:nth-child(1){transform: rotateY(0deg) translateZ(288px);}
+#carousel figure:nth-child(2) { transform: rotateY(40deg) translateZ(288px);}
+#carousel figure:nth-child(3) { transform: rotateY(80deg) translateZ(288px);}
+#carousel figure:nth-child(4) { transform: rotateY(120deg) translateZ(288px);}
+#carousel figure:nth-child(5) { transform: rotateY(160deg) translateZ(288px);}
+#carousel figure:nth-child(6) { transform: rotateY(200deg) translateZ(288px);}
+#carousel figure:nth-child(7) { transform: rotateY(240deg) translateZ(288px);}
+#carousel figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px);}
+#carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
+
+img{
+	-webkit-filter: grayscale(0);
+	cursor: pointer;
+	transition: all .5s ease;
+}
+img:hover{
+	-webkit-filter: grayscale(0);
+  transform: scale(1.2,1.2);
+}
+
+@keyframes rotation{
+	from{
+		transform: rotateY(0deg);
+	}
+	to{
+		transform: rotateY(360deg);
+	}
+}
+<script src="js/prefixfree.min.js"></script>
+    </style>
+</head>
+<body>
+	<div id="content">
+	  <div id="head">
+			<div class="banner1"><img src="images/imgschool/banner1.png" alt=""></div>
+			<div class="banner2">SCHOOL<br><ul>
+			  <li><a href="http://daming.dev.dxdc.net/grwz/MFMH.html">家与家乡</a></li>
+				<li><a href="http://daming.dev.dxdc.net/grwz">首页</a></li>
+				<li><a href="http://daming.dev.dxdc.net/grwz/CQNU.html">重师大</a></li>
+				<li><a href="http://daming.dev.dxdc.net/grwz/picture.html">留言板</a></li>
+				<li><a href="http://daming.dev.dxdc.net/grwz/Xport.html">极限运动</a></li>
+			</ul>
+            </div>
+		</div>
+		<div id="body">
+            <div class="div1"  >
+            <img src="images/imgschool/1.jpg" width="327" height="219" id="showpic" alt="alt" /> 
+            </div>
+			<div class="div2">&nbsp;&nbsp;<a href="http://www.cqnclhzz.com/">隆化职中</a>，我的转折点，我在这里学会了很多。在广达实习的三个月，我们这些刚满16岁的孩子去体验社会实践，在老师眼里我们都是再小不过的孩子，实习期间老师悉心的照顾我们，让我们在离家之后还能感受到温暖。那段时间，我们的身份不再是一个学生，而是作为社会最基础的流水线工人，我们从早上8点到下午8点不停的干活，中午吃饭休息时间30分钟。厂里的条条框框比学校多得多，每一个条条框框都是和利益有关，那段时间我深切的体会到社会是个很复杂的系统，我也告诉自己再怎么样也不能做个流水线工人，浪费时间浑浑噩噩下去。当我们实习结束的时候，回到学校，我做的第一件事情是学英文字母，我初中从未用心学习过英语，以至于英文字母有多少个也不知道。那个时候产生了我从未有过的强烈想要学习的冲动，我知道自己很笨唯一能做到只有反复学习。现在我考上了大学，我对当初认真的自己有了一个交代，也感谢学校和同学老师对我的帮助！</div>
+            <div class="div3"> <img src="images/imgschool/8.jpg" width="327" height="219" id="showpic2" alt="alt" /> </div>
+            <div class="div4">&nbsp;&nbsp;职中生活是一段很快乐的时光，我在这里我遇到了自己的一生挚友，还遇到了许许多多对我好的朋友，他们待我很真诚，我虽然是个单身狗，但是我对朋友绝对比情侣更靠谱，哭一声她们就会千里迢迢跑来借我肩膀，她们也时常原谅我的无理取闹，她们是我在这个世界上遇到的除了亲人以外对我最好的人，我很爱她们，我可以在她们面前展示我最真实的一面，我可以在她们面前抠脚，挖鼻孔，说粗话，她们会脸上一脸嫌弃然后跟着我一起抠脚挖鼻孔。在冬天的时候我们会互相挤在床上，一人一头，要咯吱窝暖和对方的脚，也不嫌弃彼此。和她们在一起会很开心，想想她们心里就会一阵暖和，为自己能遇到她们而感到幸运，谢谢鸭子，谢谢财琴，谢谢凤芹，愿以后的路我们能一起走过。（下面爆照）</div>
+            <div class="div5">
+            <div class="c">
+		<div id="carousel"><!--这个是html5所用，有些浏览器不兼容，主要实现效果是图片围成圆形旋转特效-->
+			<figure><img src="images/imgschool/01.jpg" alt=""></figure>
+			<figure><img src="images/imgschool/02.jpg" alt=""></figure>
+			<figure><img src="images/imgschool/03.jpg" alt=""></figure>
+			<figure><img src="images/imgschool/04.jpg" alt=""></figure>
+			<figure><img src="images/imgschool/05.jpg" alt=""></figure>
+			<figure><img src="images/imgschool/06.jpg" alt=""></figure>
+			<figure><img src="images/imgschool/07.jpg" alt=""></figure>
+			<figure><img src="images/imgschool/08.jpg" alt=""></figure>
+			<figure><img src="images/imgschool/09.jpg" alt=""></figure>
+
+
+		</div>
+	</div>
+
+  <script src='js/none.js'></script>
+
+  <script src="js/index.js"></script>
+<div style="text-align:center;clear:both">
+<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+<script src="/follow.js" type="text/javascript"></script>
+</div><!--这个js代码是从网上学来的，实现的是手风琴式图片展示效果，自己也没学很懂，主要是为了版面好看才去找的，不过大概意思还是能理解-->
+            </div>
+			
+      
+		</div>
+        <div class="div6"> 
+  本版面版权@重庆师范大学计算机与信息科学学院16计师杨孝明所有，Tel:18315165574,QQ:572059273,如有问题，敬请联系（终于又做好了一个）
+</div><!--脚注-->
+	</div>
+<audio autoplay loop>
+  <source src="bgm/最佳损友.mp3" type="audio/mpeg" /><!--背景音乐-->
+</audio>
+</body>
+</html>

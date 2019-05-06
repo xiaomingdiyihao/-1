@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<img src="images/1.jpg" width="427" height="219" id="showpic" alt="alt" /> 
+ 
+<script language =javascript >
+    var curIndex = 0;
+    //时间间隔 单位毫秒 
+    var timeInterval = 1000;
+    var arr = new Array();
+arr[0]="imgs/1.jpg";
+ arr[1]="imgs/2.jpg";
+arr[2]="imgs/3.jpg";
+arr[3]="imgs/4.jpg";
+arr[4]="imgs/5.jpg";
+arr[5]="imgs/6.jpg";
+arr[6]="imgs/7.jpg";
+    var timer = setInterval(changeImg, timeInterval);
+    document.getElementById('showpic').onmouseover = document.getElementById('showpic').onmouseout = function (e) {
+        e = e || window.event;
+        if (e.type=='mouseover') clearInterval(timer);
+        else timer = setInterval(changeImg, timeInterval);
+    }
+    function changeImg() {
+        var obj = document.getElementById("showpic");
+        if (curIndex == arr.length - 1) {
+            curIndex = 0;
+        }
+        else {
+            curIndex += 1;
+        }
+        obj.alt=obj.src =  arr[curIndex];
+    }
+ 
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

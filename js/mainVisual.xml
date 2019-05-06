@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='euc-kr'?>
+<contentsRotator>
+<item order='1' category='E' type='image' title='MY FAMILY' image='img/01.gif' source='http://www.baidu.com' target='_blank' />
+<item order='2' category='E' type='image' title='SCHOOL' image='img/01.gif' source='http://www.baidu.com' target='_blank' />
+<item order='3' category='E' type='image' title='CQNU' image='img/01.gif' source='http://www.baidu.com' target='_blank' />
+<item order='4' category='E' type='image' title='MESSAGE' image='img/01.gif' source='http://www.baidu.com' target='_blank' />
+<item order='5' category='E' type='image' title='X-PORT' image='img/01.gif' source='http://www.baidu.com'  target="_blank"/>
+<item order='6' category='S' type='image' title='MY FAMILY' image='img/01.gif' source='http://www.baidu.com' target='_blank' />
+<item order='7' category='S' type='video' title='SCHOOL' image='img/01.gif' source='http://www.baidu.com'  target='_blank'/>
+<item order='8' category='S' type='video' title='CQNU' image='img/01.gif' source='http://www.baidu.com'  target='_blank'/>
+<item order='9' category='B' type='image' title='MESSAGE' image='img/01.gif' source='http://www.baidu.com' target='_blank' />
+<item order='10' category='B' type='image' title='X-PORT' image='img/01.gif' source='http://www.baidu.com' target='_blank' />
+<item order='11' category='B' type='image' title='ME' image='img/01.gif' source='http://www.baidu.com' target='_blank' />
+</contentsRotator>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            *{margin: 0;padding: 0;}
+            .dk{height: 540px; width: 200px; border: 1px solid red; position: relative; margin:20px auto;}
+            .dk_top{height: 30px; width: 200px; background-color: coral;text-align: center;}
+            .dk_bottom{height: 30px; width: 200px; background-color: coral;text-align: center;}
+            ul{height: 480px; width: 200px; background-color: cornsilk; overflow: hidden;}
+            ul li{list-style: none; height: 80px; width: 200px; border-bottom: 1px solid red;  line-height: 40px; text-align: center;}
+            img{height: 80px; width: 200px;}
+        </style>
+        <script>
+            window.onload = function(){
+                var dk = document.getElementById("dk");
+                var odiv = dk.getElementsByTagName('div');
+                var oul = dk.getElementsByTagName('ul')[0];
+                var ali = oul.getElementsByTagName('li');
+                var timer = null;
+                var i = 0;                           
+                odiv[0].onclick = function (){
+                    if(timer != null){
+                        //停止滑动
+                        clearInterval(timer);
+                    }
+                    timer = setInterval(function(){
+
+                        ali[0].style.marginTop = -i+'px';
+
+                            i++;
+                            if( i == 325){
+                              clearInterval(timer);
+                           }
+                    },30);
+                }
+
+                odiv[1].onclick = function (){
+                    if(timer != null){
+                        //停止滑动
+                        clearInterval(timer);
+                    }
+                    timer = setInterval(function(){
+                        ali[0].style.marginTop = -i+'px';
+
+                            i -= 1;
+                            if( i == 0){
+                              clearInterval(timer);
+                           }
+                    },30);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="dk" id="dk">
+            <div class="dk_top">向上</div>
+                <ul>
+                    <li><img src="imgs/1.jpg"></li>
+                    <li><img src="imgs/2.jpg"></li>
+                    <li><img src="imgs/3.jpg"></li>
+                    <li><img src="imgs/4.jpg"></li>
+                    <li><img src="imgs/5.jpg"></li>
+                    <li><img src="imgs/6.jpg"></li>
+                    <li><img src="imgs/7.jpg"></li>
+                    <li><img src="imgs/8.jpg"></li>
+                    <li><img src="imgs/9.jpg"></li>
+                    <li><img src="imgs/10.jpg"></li>
+                </ul>
+            <div class="dk_bottom">向下</div>
+        </div>
+    </body>
+</html>

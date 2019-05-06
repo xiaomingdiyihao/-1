@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+
+<script>
+var arr=new Array()
+arr[0]="img1.jpg";
+arr[1]="img2.jpg";
+arr[2]="img3.jpg";
+arr[3]="img4.jpg";
+arr[4]="img5.jpeg";
+var i=0;
+function image()
+{
+	var ima=document.getElementById("image");
+	ima.src=arr[i]
+	i++;
+	if(i==5)
+	i=0
+	setTimeout("image()",2000)
+	}
+</script>
+<style>
+div{height: 140px;width: 140px;}
+</style>
+</head>
+
+<body onload="image()">
+<div><img src="1.jpeg" width="140" height="140" id="image"></div>
+</body>
+</html>
